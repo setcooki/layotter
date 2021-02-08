@@ -27,6 +27,10 @@ function layotter_make_search_dump($data, $raw_post){
     $layotter_post = new Layotter_Post($unslashed_json);
     $content = $layotter_post->get_frontend_view();
 
+    //hotfix since wordpress deep removes all slashes for custom html in wygiwys editor
+    if(is_string($json)) {
+        $json = wp_slash($json);
+    }
     // save JSON to a custom field (oddly enough, Wordpress breaks JSON if it's stripslashed)
     update_post_meta($post_id, 'layotter_json', $json);
 
