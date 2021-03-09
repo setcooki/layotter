@@ -22,7 +22,9 @@ function layotter_assets_admin_enqueue_scripts() {
         'layotter-font-awesome',
         plugins_url('assets/css/font-awesome.min.css', __DIR__)
     );
-
+    wp_enqueue_style(
+        'layotter-font-awesome-v4shim', 'https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css'
+    );
 
     // jQuery plugin used to serialize form data
     wp_enqueue_script(

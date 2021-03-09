@@ -365,6 +365,9 @@ class Layotter_Settings {
             'layotter-font-awesome',
             plugins_url('assets/css/font-awesome.min.css', __DIR__)
         );
+        wp_enqueue_style(
+            'layotter-font-awesome-v4shim', 'https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css'
+        );
 
         // display notice if settings have been saved
         if (isset($_GET['settings-updated'])) {
